@@ -37,10 +37,10 @@ export const sendOtp = async (req: Request, res: Response) => {
     serviceId: emailServiceId,
     code: codeEmail,
     client: email,
-    secret_key: createRandomRef(12, "enumber",),
+    secret_key: createRandomRef(12, "eizyapp",),
   })
   console.log(codeEmail)
-  await sendEmail(email, "Enumber otp code", templateEmail("OTP CODE", codeEmail.toString()));
+  await sendEmail(email, "Eizy App otp code", templateEmail("OTP CODE", codeEmail.toString()));
   return successResponse(res, "Successful", {
     status: true,
     emailServiceId
@@ -118,9 +118,9 @@ export const register = async (req: Request, res: Response) => {
           serviceId: emailServiceId,
           code: codeEmail,
           client: email,
-          secret_key: createRandomRef(12, "enumber",),
+          secret_key: createRandomRef(12, "eizyapp",),
         })
-        await sendEmail(email, "Enumber otp code", templateEmail("OTP CODE", codeEmail.toString()));
+        await sendEmail(email, "Eizy App otp code", templateEmail("OTP CODE", codeEmail.toString()));
 
         let token = sign({ id: user.id, email: user.email }, TOKEN_SECRET);
 
@@ -144,9 +144,9 @@ export const register = async (req: Request, res: Response) => {
         serviceId: emailServiceId,
         code: codeEmail,
         client: email,
-        secret_key: createRandomRef(12, "enumber",),
+        secret_key: createRandomRef(12, "eizyapp",),
       })
-      await sendEmail(email, "Enumber otp code", templateEmail("OTP CODE", codeEmail.toString()));
+      await sendEmail(email, "Eizy App otp code", templateEmail("OTP CODE", codeEmail.toString()));
       //  sendEmailResend(email, codeEmail.toString());
       let token = sign({ id: user.id, email: user.email }, TOKEN_SECRET);
       return successResponse(res, "Successful", {

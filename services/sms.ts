@@ -21,8 +21,8 @@ export const sendEmail = async (email: String, subject: String, template: String
       `https://api.brevo.com/v3/smtp/email`,
       {
         "sender":{  
-          "name": "Enumber",
-          "email":"support@enumber.com"
+          "name": "Eizy App",
+          "email":"support@eizyapp.com"
        },
        "to":[  
           {  
