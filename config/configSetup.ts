@@ -53,6 +53,7 @@ const getConfig = (): Config => {
 		PUBLIC_ROUTES: [
 			'/api',
 			'/',
+			'/api/test',
 			'/api/user/login',
 			'/api/user/register',
 			'/api/user/forget',
