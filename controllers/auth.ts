@@ -211,3 +211,12 @@ export const changePassword = async (req: Request, res: Response) => {
 };
 
 
+
+export const testApi = async (req: Request, res: Response) => {
+  return successResponse(res, "Successful")
+};
+
+
+
+
+

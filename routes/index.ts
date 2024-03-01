@@ -1,6 +1,6 @@
 // Import packages
 import { Router } from 'express';
-import {  changePassword, login, register, verifyOtp } from '../controllers/auth';
+import {  changePassword, login, register, testApi, verifyOtp } from '../controllers/auth';
 import { fetchCountry, fetchNewNumber, fetchNumberStatus, fetchPlaforms, fetchPrice, fetchUserNumber } from '../controllers';
 
 
@@ -17,6 +17,7 @@ routes.get('/user/price', fetchPrice);
 routes.get('/user/number', fetchNewNumber);
 routes.get('/user/status', fetchNumberStatus);
 routes.get('/user/numbers', fetchUserNumber);
+routes.get('/test', testApi);
 
 
 
