@@ -94,12 +94,32 @@ export const fetchNewNumber = async (req: Request, res: Response) => {
     }
   })
   if (response.data.toString().includes("ACCESS_NUMBER")) {
+    console.log(response.data);
     let values = response.data.toString().split(":")
     const number = await Numbers.create({
       userId: id,
       activationCode: values[1], phoneNumber: values[2], status: "", serviceName, countryName
     })
     return successResponse(res, "Successful", number);
+  } else if (response.data.toString().includes("NO_CHANNELS")) {
+    const response = await axios({
+      method: 'get',
+      url: `https://api.sms-man.com/stubs/handler_api.php?action=getNumber&api_key=${config.NUMBER_API_KEY}&service=${service}&country=${country}&ref=-_8s_ZMXSfNq`,
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+      }
+    })
+    if (response.data.toString().includes("ACCESS_NUMBER")) {
+      console.log(response.data);
+      let values = response.data.toString().split(":")
+      const number = await Numbers.create({
+        userId: id,
+        activationCode: values[1], phoneNumber: values[2], status: "", serviceName, countryName
+      })
+      return successResponse(res, "Successful", number);
+    } else {
+      return errorResponse(res, "Successful", response.data);
+    }
   } else {
     return errorResponse(res, "Successful", response.data);
   }
