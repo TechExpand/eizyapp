@@ -5,6 +5,7 @@ import config from './config/configSetup';
 
 import { initDB } from './controllers/db';
 import index from './routes/index';
+import grizzlyIndex from "./routes/grizzlyIndex";
 import auth from './routes/auth';
 import { isAuthorized } from './middlewares/authorise';
 
@@ -31,6 +32,7 @@ app.listen(config.PORT, () => {
 
 app.all('*', isAuthorized);
 app.use("/api", index);
+app.use("/api", grizzlyIndex);
 app.use("/api", auth);
 
 

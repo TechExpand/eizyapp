@@ -14,6 +14,7 @@ type Config = {
 	DBPORT: number | undefined;
 	DBDIALECT: string | undefined;
 	MAIL_FROM: string | undefined;
+	GRIZZLY_NUMBER_API_KEY: string | undefined;
 	SUPPORT_MAIL: string | undefined;
 	BREVO: string | undefined;
 	NUMBER_API_KEY: string | undefined;
@@ -36,6 +37,7 @@ const getConfig = (): Config => {
 		JWT_EXPIRY_TIME: process.env.JWT_EXPIRY_TIME,
 		DBNAME: process.env.DBNAME,
 		DBUSERNAME: process.env.DBUSERNAME,
+		GRIZZLY_NUMBER_API_KEY: process.env.GRIZZLY_NUMBER_API_KEY,
 		DBPASSWORD: process.env.DBPASSWORD,
 		DBHOST: process.env.DBHOST,
 		DBPORT: Number(process.env.DBPORT),
