@@ -4,15 +4,6 @@ import config from '../config/configSetup';
 
 
 
-// const resend = new Resend(config.BREVO);
-// export const sendEmailResend = async (email: String, subject: String, template: String)=>{
-//   resend.emails.send({
-//     from: 'app@foodtruck.express',
-//     to: `${email}`,
-//     subject: `${subject}`,
-//     html: `${template}`
-//   });
-// }
 
 
 
